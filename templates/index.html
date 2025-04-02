@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>安徽美食数据可视化</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/app.css" />
+	<!-- 添加ECharts和jQuery -->
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+	<header id="header">
+		<h3 class="header-title">安徽美食数据大屏</h3>
+	</header>
+
+	<div id="container">
+		<div id="flexCon">
+			<div class="flex-row">
+				<!-- 左侧容器 -->
+				<div class="flex-cell flex-cell-l">
+					<div class="flex-col">
+						<!-- 左上 -->
+						<div class="flex-cell">
+							<div class="chart-wrapper">
+								<h3 class="chart-title">总价前八美食</h3>
+								<div class="chart-div">
+									<div id="sort-pie" style="width: 100%; height: 100%;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 左下 -->
+						<div class="flex-cell">
+							<div class="chart-wrapper">
+								<h3 class="chart-title">好评数量前五菜式</h3>
+								<div class="chart-div">
+									<div id="rand-rect" style="width:100%; height: 100%;">
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<!-- 中间容器放地图 -->
+				<div class="flex-cell flex-cell-c">
+					<div class="chart-wrapper">
+						<h3 class="chart-title">安徽美食分布地图</h3>
+						<div class="chart-div">
+							<div id="anhuiMap" style="width: 100%; height: 100%;"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 右侧容器放树状图 -->
+				<div class="flex-cell flex-cell-r">
+					<div class="flex-col">
+						<!-- 右上 -->
+						<div class="flex-cell">
+							<div class="chart-wrapper">
+								<h3 class="chart-title">各价格区间数量</h3>
+								<div id="price-detail" style="width: 100%; height: 100%;"></div>
+								<div class="chart-div"></div>
+							</div>
+						</div>
+						<!-- 右下 -->
+						<div class="flex-cell">
+							<div class="chart-wrapper">
+								<h3 class="chart-title">各菜品类型占比</h3>
+								<div class="chart-div">
+									<div id="type-percent" style="width: 100%; height: 100%;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="../static/js/map.js"></script>
+	<script src="../static/js/piemap.js"></script>
+	<script src="../static/js/rectmap.js"></script>
+	<script src="../static/js/linemap.js"></script>
+	<script src="../static/js/percentmap.js"></script>
+</body>
+
+</html>
