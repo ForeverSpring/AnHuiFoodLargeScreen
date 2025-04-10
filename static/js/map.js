@@ -27,6 +27,8 @@ fetch('/static/json/340000.geojson')
                 type: 'map',
                 map: '安徽',
                 data: [],
+                zoom: 1.2,
+                roam: true,
                 label: {
                     normal: {
                         show: true,
