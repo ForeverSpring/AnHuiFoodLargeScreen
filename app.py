@@ -16,5 +16,10 @@ def search(position):
     return jsonify([food.__dict__ for food in result])
 
 
+@app.route('/introduce/<foodName>')
+def introduce(foodName):
+    result = sql.SqlUtil.getFoodIntroduce(foodName)
+    return jsonify(result)
+
 if __name__ == "__main__":
     app.run(debug=False)

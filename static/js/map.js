@@ -31,10 +31,12 @@ fetch('/static/json/340000.geojson')
                     normal: {
                         show: true,
                         color: "#000000",
+                        fontSize: 12,
                     },
                     emphasis: {
                         show: true,
                         color: "#000000",
+                        fontSize: 17,
                     },
                 },
                 itemStyle: {
@@ -53,7 +55,10 @@ fetch('/static/json/340000.geojson')
                     disabled: false,
                     itemStyle: {
                         areaColor: "#F1EB19",
-                    }
+                    },
+                    label: {
+                        fontSize: 17,
+                    },
                 },
             }],
         };
@@ -65,3 +70,16 @@ fetch('/static/json/340000.geojson')
         });
         display_content();
     });
+
+window.addEventListener('resize', function () {
+    var map = echarts.init(document.getElementById('anhuiMap'));
+    var pie = echarts.init(document.getElementById('sort-pie'));
+    var rectChart = echarts.init(document.getElementById('rand-rect'));
+    var lineMap = echarts.init(document.getElementById('price-detail'));
+    var percentMap = echarts.init(document.getElementById('type-percent'));
+    map.resize();
+    pie.resize();
+    rectChart.resize();
+    lineMap.resize();
+    percentMap.resize();
+});

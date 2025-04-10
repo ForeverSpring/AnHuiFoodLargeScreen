@@ -52,4 +52,26 @@ function display_pie_map(param) {
         ]
     };
     myChart.setOption(option);
+    myChart.on('click', function (params) {
+        displayIntroduce(params.data.name);
+    });
+    myChart.on('mouseover', function (params) {
+        displayIntroduce(params.data.name);
+    });
+}
+function displayIntroduce(foodname) {
+    if (foodname === '') return;
+    fetch('http://127.0.0.1:5000/introduce/' + foodname)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // 解析JSON数据
+        })
+        .then(data => {
+            document.getElementById('food-introduce').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
 }
