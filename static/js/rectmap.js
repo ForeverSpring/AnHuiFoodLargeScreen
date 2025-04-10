@@ -14,6 +14,13 @@ function display_rect_map(param) {
         }
     }
     option = {
+        grid: {
+            top: '15%',
+            left: '3%',
+            right: '15%',
+            bottom: '3%',
+            containLabel: true  
+        },
         xAxis: {
             type: 'category',
             data: xAxisData,
